@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+
+  streamlit:
+    network_mode: host
+    build:
+      context: ./docker/streamlit
+      dockerfile: Dockerfile
+    ports:
+      - 8501:8501
+    command: ["streamlit", "run", "app.py", "--server.baseUrlPath", "/app"]
+    environment:
+      - GRANT_SUDO='yes'
+      - CHOWN_HOME=yes
+      - CHOWN_HOME_OPTS=-R
+      - NB_UID=1002
+      - NB_GID=1002
+    volumes:
+      - ./app:/app

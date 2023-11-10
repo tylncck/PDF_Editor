@@ -4,6 +4,8 @@ import subprocess
 import io 
 import os
 
+delete_pdf_files()
+
 st.title('Compressing PDFs')
 
 st.markdown(
@@ -30,7 +32,7 @@ if uploaded_file:
         if compression_method == "PyPDF2 Compression":
             compressed_pdf = pdf_compress(uploaded_file)
         else:
-            target_directory = 'app/files'
+            target_directory = 'files'
             target_path = save_file(uploaded_file)
             output_file = target_directory + '/' + output_file_name
             compression_command = f'gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="{output_file}" "{target_path}"'

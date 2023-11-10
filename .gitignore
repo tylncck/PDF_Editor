@@ -1,3 +1,3 @@
-*.pdf
-app/assets
+#*.pdf
+#app/assets
 app/files

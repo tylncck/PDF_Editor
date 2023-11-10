@@ -1,6 +1,8 @@
 import streamlit as st
-from scripts.funtions import pdf_merger
+from scripts.funtions import pdf_merger, delete_pdf_files
 from streamlit_sortables import sort_items
+
+delete_pdf_files()
 
 st.title('Merging Multiple PDFs')
 

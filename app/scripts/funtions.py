@@ -15,11 +15,13 @@ def save_file(file_uploader):
 
 def delete_pdf_files():
     target_directory = 'files'
-    files = os.listdir(target_directory)
-    pdf_files = [file for file in files if file.lower().endswith(".pdf")]
-    for pdf_file in pdf_files:
-        pdf_path = os.path.join(target_directory, pdf_file)
-        os.remove(pdf_path)
+    if os.path.exists(target_directory) and os.path.isdir(target_directory):
+        files = os.listdir(target_directory)
+        pdf_files = [file for file in files if file.lower().endswith(".pdf")]
+        
+        for pdf_file in pdf_files:
+            pdf_path = os.path.join(target_directory, pdf_file)
+            os.remove(pdf_path)
 
 def pdf_merger(pdf_file_list):
     merger = PdfWriter()

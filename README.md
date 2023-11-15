@@ -9,9 +9,10 @@ To run the application, make sure you have Docker Desktop installed on your syst
 
 ### Building and Running the Container
 1. Open a terminal, navigate to a desired directory to clone this repository. Run `git clone https://github.com/tylncck/PDF_Editor.git`. For this task git must be installed on your local machine. Please follow [Git Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for more details. 
-2. This repository comes with `docker-compose.yml` file. All you need is to run `docker compose up --build` command on your terminal or VSCode terminal. 
-3. Alternatively you can build and run the container with following commands: `docker build -t pdf-editor-app` then `docker run -p 8501:8501 pdf-editor-app`
-4. Open your browser and navigate to the Network URL prompted on the terminal to access the PDF Editor Application. The url may be like [http://localhost:8501/app](http://localhost:8501/app) or a URL containing an IP number followed by the assigned port. 
+2. This repository comes with `Dockerfile` file. After running the Docker Desktop, all you need is to run following two commands on your terminal or VSCode terminal:
+- `docker build -t pdf_editor_new:final .` This command will build the image with requirements. You can replace `pdf_editor_new:final` with your prefered *name:tag* combination.  
+- `docker run -p 8501:8501 pdf_editor_new:final` This command will run the container together with the application. If you change the name:tag combination in above code, you have to use the same combination here as well. 
+3. Open your browser and navigate to [http://localhost:8501/app](http://localhost:8501/app) to access the PDF Editor Application. 
 
 ## Application Pages
 
